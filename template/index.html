@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Codex : Co-Pilot </title>
+<style>
+
+  body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7fa; /* Light grey-blue background for a subtle look */
+  color: #333; /* Dark grey text for contrast */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 1em 0;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  width:98%;
+  margin: 20px auto;
+}
+
+.box {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 20px;
+  width: calc(50% - 40px); /* Adjusting box width to account for margin */
+  margin: 0 20px;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #d3d3d3;
+  border-radius: 4px;
+  resize: vertical;
+  background-color: #edf2f7; /* Lighter background for textarea */
+}
+
+select, button{
+  width: 25%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 4px;
+  border: 1px solid #d3d3d3;
+  background-color: #e7eefb; /* Light blue background */
+  font-size: 1em;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 4px;
+  border: 1px solid #d3d3d3;
+  background-color: #e7eefb; /* Light blue background */
+  font-size: 1em;
+}
+
+button {
+  color: #fff;
+  background-color: #007bff; /* Cobalt blue background for buttons */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.navigation li {
+  padding: 0 15px;
+  color: #007bff; /* Cobalt blue for navigation links */
+  cursor: pointer;
+}
+
+.navigation li:hover {
+  text-decoration: underline;
+}
+
+.footer {
+  background-color: #e7eefb; /* Light blue background for footer */
+  text-align: center;
+  padding: 1em 0;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+}
+
+.footer p {
+  margin: 0;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="box">
+    <select id="inputLanguage">
+      <option value=""> Input Language</option>
+      <option value="hi">Hindi</option>
+      <option value="en">English</option>
+      <option value="ml">Malayalam</option>
+      <option value="kn">Kannada</option>
+      <!-- Populate with actual language options -->
+    </select>
+     <select id="outputLanguage">
+      <option value=""> Output Language</option>
+      <option value="hi">Hindi</option>
+      <option value="en">English</option>
+      <option value="ml">Malayalam</option>
+      <option value="kn">Kannada</option>
+      <!-- Populate with actual language options -->
+    </select>
+    <div class = btn >
+     <label><input type="radio" name="action" value="translate" checked> Translate</label>
+    <label><input type="radio" name="action" disabled value="paraphrase"> Paraphrase</label>
+    <label><input type="radio" name="action" disabled value="both"> Translate + Paraphrase</label>
+   
+    </div>
+    <textarea id="inputText" placeholder="Enter text to translate"></textarea>
+    <button onclick="processText()">Submit</button>
+  </div>
+
+  <div class="box">
+    <button onclick="discardText()">Download</button>
+    <button onclick="copyText()">Copy</button>
+    <textarea id="outputText" readonly></textarea>
+     <button onclick="discardText()">Discard</button>
+    <button onclick="copyText()">Copy</button>
+   <button onclick="discardText()">Download</button>
+  </div>
+</div>
+
+</body>
+
+<script>
+  
+ function processText() {
+  debugger;
+  var inputText = document.getElementById('inputText').value;
+  var inputLang = document.getElementById('inputLanguage').value;
+  var outputLang = document.getElementById('outputLanguage').value;
+  var action = document.querySelector('input[name="action"]:checked').value;
+
+  // Data to be sent to the server
+  var dataToSend = {
+    text: inputText,
+    input_lang: inputLang,
+    output_lang: outputLang,
+    action: action
+  };
+
+  // Make a request to the server
+  fetch('/process_text', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(dataToSend),
+  })
+  .then(response => response.json())
+  .then(data => {
+    // This assumes the response contains a 'processed_text' field.
+    document.getElementById('outputText').value = data.processed_text;
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
+}
+
+
+
+
+</script>
+<script>
+  const textarea = document.getElementById('notepad');
+
+  textarea.addEventListener('keydown', function(e){
+    // Select All: Ctrl+A
+    if (e.ctrlKey && e.key === 'a') {
+      e.preventDefault(); // Prevent the default action
+      textarea.select();
+    }
+
+    // Copy: Ctrl+C
+    // No need to implement, as the browser will handle this by default.
+
+    // Cut: Ctrl+X
+    // No need to implement, as the browser will handle this by default.
+
+    // Paste: Ctrl+V
+    // No need to implement, as the browser will handle this by default.
+
+    // Undo: Ctrl+Z
+  if (e.ctrlKey && e.key === 'y') {
+      e.preventDefault(); // Prevent the default action
+      document.execCommand('redo');
+    }
+
+
+    if (e.ctrlKey && e.key === 'z') {
+      e.preventDefault(); // Prevent the default action
+      document.execCommand('undo');
+    }
+
+    // Redo: Ctrl+Y
+    if (e.ctrlKey && e.key === 'y') {
+      e.preventDefault(); // Prevent the default action
+      document.execCommand('redo');
+    }
+
+    // Save: Ctrl+S
+    if (e.ctrlKey && e.key === 's') {
+      e.preventDefault(); // Prevent the default action
+      // Implement your save logic here
+      alert('Save logic not implemented.');
+    }
+
+    // Find: Ctrl+F
+    if (e.ctrlKey && e.key === 'f') {
+      e.preventDefault(); // Prevent the default action
+      // Implement your find logic here
+      alert('Find logic not implemented.');
+    }
+
+    // New Document: Ctrl+N
+    if (e.ctrlKey && e.key === 'n') {
+      e.preventDefault(); // Prevent the default action
+      // Implement your new document logic here
+      alert('New document logic not implemented.');
+    }
+    
+    // For other shortcuts, you would add additional conditions here.
+  });
+</script>
+</html>
