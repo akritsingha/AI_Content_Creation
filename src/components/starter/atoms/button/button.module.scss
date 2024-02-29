@@ -1,0 +1,23 @@
+.button{
+    border: none;
+    cursor: pointer;
+    background: transparent;
+    // sizes
+    &.size_md{
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+    &.size_small{
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+    &.size_xl{
+        font-size: 20px;
+        padding: 15px 25px;
+    }
+    &:hover{
+        background-color: #525252;
+        color: #ffffff !important;
+    }
+    
+}

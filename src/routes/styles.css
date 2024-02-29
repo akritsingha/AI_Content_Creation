@@ -1,0 +1,44 @@
+/* THIS FILE IS JUST FOR EXAMPLES, DELETE IT IF YOU DON'T NEED IT */
+
+/* SHELL ---------------------------------------- */
+html, input, select, textarea {
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    "Noto Sans",
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji";
+}
+
+/* HEADINGS ------------------------------------- */
+h1,
+h2,
+h3 {
+  margin: 0;
+  transition-duration: 0.5s;
+}
+h1 {
+  font-size: clamp(30px, 35px, 2.5vw);
+}
+h2 {
+  font-size: clamp(24px, 30px, 2vw);
+}
+h3 {
+  font-size: clamp(20px, 25px, 1.8vw);
+}
+p {
+  font-size: clamp(16px, 17px, 18px);
+}
+/* TAGS ----------------------------------------- */
+a {
+  text-decoration: none;
+}

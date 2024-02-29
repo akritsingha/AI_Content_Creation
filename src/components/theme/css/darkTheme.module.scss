@@ -1,0 +1,48 @@
+:root {
+  --qwik-white-color: #FFFFFF;
+  --qwik-logo-color: #1792A8;
+  --qwik-dark-grey-color: #8B8B8B;
+  --qwik-dark-bg-color: #000000;
+  --qwik-stroke-color: #505050;
+  --qwik-dark-input: #131313;
+}
+.theme{
+    width: 100%;
+    height: 100%;
+    background: var(--qwik-dark-input);
+    color: var(--qwik-white-color);
+    :global {
+        a.logo{
+            h1{
+                color: var(--qwik-logo-color);
+            }
+            h2{
+                color: var(--qwik-dark-grey-color);
+            }
+        }
+        .navItem{
+            a{
+                color: var(--qwik-white-color);
+            }
+        }
+        .button_border, input, select, textarea{
+            border: 1px solid var(--qwik-white-color);
+        }
+        button, input, select, textarea{
+            color: var(--qwik-white-color);
+        }
+        input, select, textarea{
+            background: var(--qwik-dark-input);
+            &:focus{
+                background-color: transparent;
+                outline: 0;
+                box-shadow: 0px 0px 20px #b7b7b79c;
+            }
+        }
+        .sidePageNav{
+            background: var(--qwik-dark-input);
+            color: var(--qwik-white-color);
+        }
+    }
+    
+}

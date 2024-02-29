@@ -1,0 +1,40 @@
+:root {
+  --qwik-white-color: #FFFFFF;
+  --qwik-logo-color: #1792A8;
+  --qwik-dark-grey-color: #8B8B8B;
+  --qwik-light-bg-color: #f7f7f7;
+  --qwik-stroke-color: #505050;
+  --qwik-black-color: #000000;
+}
+
+.theme {
+  width: 100%;
+  height: 100%;
+  background: var(--qwik-light-bg-color);
+  color: var(--qwik-black-color);
+}
+.theme :global a.logo h1 {
+  color: var(--qwik-logo-color);
+}
+.theme :global a.logo h2 {
+  color: var(--qwik-dark-grey-color);
+}
+.theme :global .navItem a {
+  color: var(--qwik-black-color);
+}
+.theme :global .button_border, .theme :global input, .theme :global select, .theme :global textarea {
+  border: 1px solid var(--qwik-black-color);
+}
+.theme :global .button_border[type=range], .theme :global input[type=range], .theme :global select[type=range], .theme :global textarea[type=range] {
+  border: 1px solid transparent;
+}
+.theme :global button, .theme :global input, .theme :global select, .theme :global textarea {
+  color: var(--qwik-black-color);
+}
+.theme :global input, .theme :global select, .theme :global textarea {
+  background: var(--qwik-light-bg-color);
+}
+.theme :global .sidePageNav {
+  background: var(--qwik-light-bg-color);
+  color: var(--qwik-black-color);
+}/*# sourceMappingURL=lightTheme.module.css.map */

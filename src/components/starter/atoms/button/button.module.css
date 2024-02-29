@@ -1,0 +1,21 @@
+.button {
+  border: none;
+  cursor: pointer;
+  background: transparent;
+}
+.button.size_md {
+  font-size: 16px;
+  padding: 10px 20px;
+}
+.button.size_small {
+  font-size: 14px;
+  padding: 5px 10px;
+}
+.button.size_xl {
+  font-size: 20px;
+  padding: 15px 25px;
+}
+.button:hover {
+  background-color: #525252;
+  color: #ffffff !important;
+}/*# sourceMappingURL=button.module.css.map */

@@ -1,0 +1,53 @@
+:global *, :global html, :global boy {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:global body {
+  overflow-x: clip;
+}
+:global .d_flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+:global .space-between {
+  justify-content: space-between;
+}
+:global .space-start {
+  justify-content: start;
+}
+:global .space-end {
+  justify-content: end;
+}
+:global .align-start {
+  align-items: start;
+}
+:global .algin-end {
+  align-items: end;
+}
+:global .text-center {
+  text-align: center;
+}
+:global .fullheight {
+  height: 100%;
+}
+:global .text_nowrap {
+  text-wrap: nowrap;
+}
+:global .border-left {
+  border-left: 1px solid rgba(165, 165, 165, 0.681);
+}
+:global .container {
+  padding: 10px;
+  overflow: hidden;
+}
+:global .mt-10 {
+  margin-top: 10px;
+}
+:global ul {
+  list-style-type: none;
+}
+:global .flex_column {
+  flex-flow: column;
+}/*# sourceMappingURL=global.module.css.map */

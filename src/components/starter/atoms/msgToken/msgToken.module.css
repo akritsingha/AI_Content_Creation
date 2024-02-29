@@ -1,0 +1,27 @@
+.msg {
+  padding: 10px 20px;
+  margin-right: 10px;
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.649);
+  display: block;
+  float: right;
+  border-radius: 7px;
+  transition: ease-in 0.5s;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+.msg.error {
+  background: rgb(201, 2, 2);
+  color: white;
+}
+.msg.success {
+  background: rgb(0, 169, 0);
+  color: white;
+}
+.msg.info {
+  background: rgb(0, 85, 169);
+  color: white;
+}
+.msg.hide {
+  opacity: 0;
+}/*# sourceMappingURL=msgToken.module.css.map */

@@ -1,0 +1,1 @@
+import{E as n,P as s,a as e,H as t}from"./q-DHtzYj6M.js";const l="_theme_n7ojl_10",o={theme:l},a=()=>n(e,{children:s("div",null,{class:o.theme},n(t,null,3,"kL_0"),1,null)},1,"kL_1");export{a as s_pyn6Ooby9Wo};

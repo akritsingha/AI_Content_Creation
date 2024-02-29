@@ -1,0 +1,91 @@
+.rewrite {
+  width: 100%;
+  height: 100vh;
+}
+.rewrite .headerslot {
+  margin: 0px 10px;
+}
+.rewrite .headerslot input[type=range] {
+  /* removing default appearance */
+  margin: 0px 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  /* creating a custom design */
+  width: 100px;
+  cursor: pointer;
+  outline: none;
+  border-radius: 15px;
+  /*  overflow: hidden;  remove this line*/
+  /* New additions */
+  height: 6px;
+  background: #ccc;
+  /* Thumb: Firefox */
+}
+.rewrite .headerslot input[type=range]::-webkit-slider-thumb { /* Thumb: webkit */
+  /* removing default appearance */
+  -webkit-appearance: none;
+  appearance: none;
+  /* creating a custom design */
+  height: 15px;
+  width: 15px;
+  background-color: #ccc;
+  border-radius: 50%;
+  border: none;
+  /* box-shadow: -407px 0 0 400px #f50; emove this line */
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+.rewrite .headerslot input[type=range]::-moz-range-thumb {
+  height: 15px;
+  width: 15px;
+  background-color: #a4a4a4;
+  border-radius: 50%;
+  border: none;
+  /* box-shadow: -407px 0 0 400px #f50; emove this line */
+  -moz-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+.rewrite .gridContainer {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  transition: ease-in 0.5s;
+  height: calc(100vh - 71px);
+}
+.rewrite .gridContainer.collapseRight {
+  grid-template-columns: 100% 0%;
+}
+.rewrite .gridContainer.collapseLeft {
+  grid-template-columns: 0% 100%;
+}
+.rewrite .gridContainer .controlls {
+  height: 50px;
+}
+.rewrite .gridContainer .iuputContainer {
+  height: calc(100% - 120px);
+}
+
+:global .br-20 {
+  border-radius: 20px;
+}
+:global .br-7 {
+  border-radius: 7px;
+}
+:global .ml-7 {
+  margin-left: 7px;
+}
+:global .ml-12 {
+  margin-left: 12px;
+}
+:global .mt-30 {
+  margin-top: 30px;
+}
+:global .pos_right {
+  right: 0;
+}
+:global .font_25 {
+  font-size: 25px;
+}
+:global .navActive {
+  scale: 1.4;
+}/*# sourceMappingURL=rewrite.module.css.map */

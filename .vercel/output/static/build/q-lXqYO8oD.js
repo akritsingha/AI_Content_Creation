@@ -1,0 +1,1 @@
+import{w as m}from"./q-DHtzYj6M.js";const e=(o,t)=>{const s=new CustomEvent("showMsgToUser",{detail:{component:"msgToken",data:{msg:o,type:t}}});window.dispatchEvent(s)};export{m as _hW,e as s_zzNqSbiM9Jg};

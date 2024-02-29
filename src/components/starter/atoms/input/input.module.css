@@ -1,0 +1,74 @@
+.input .inputWrapper {
+  display: flex;
+  flex-flow: column;
+  padding: 5px;
+  height: 100%;
+}
+.input .inputWrapper select {
+  padding: 7px 15px;
+  border-radius: 7px;
+}
+.input .inputWrapper input {
+  border-radius: 7px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.input .inputWrapper textarea {
+  border-radius: 7px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  min-height: 150px;
+  padding: 10px;
+  height: 100%;
+}
+.input .inputWrapper .inputMsg {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #808080;
+}
+.input label {
+  padding-top: 13px;
+  padding-left: 5px;
+  text-wrap: nowrap;
+}
+.input.row {
+  display: flex;
+  flex-flow: row;
+}
+.input.row label {
+  margin-right: 10px;
+}
+.input.col {
+  display: flex;
+  flex-flow: column;
+}
+.input.col label {
+  margin-bottom: 10px;
+}
+.input.size_md {
+  font-size: 16px;
+}
+.input.size_md input {
+  font-size: 16px;
+  padding: 6px 12px;
+}
+.input.size_small {
+  font-size: 14px;
+}
+.input.size_small input {
+  font-size: 14px;
+  padding: 5px 10px;
+}
+.input.size_xl {
+  font-size: 20px;
+}
+.input.size_xl input {
+  font-size: 20px;
+  padding: 8px 14px;
+}
+.input.required label::after {
+  content: "*";
+  color: red;
+}/*# sourceMappingURL=input.module.css.map */
